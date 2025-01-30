@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traffic Light v3</title>
+    <title>Traffic Light v4</title>
     <style>
         #trafficLight {
             width: 3rem;
@@ -23,6 +23,7 @@
     </style>
 </head>
 <body>
+    <h1>DRY - Don't Repeat Yourself</h1>
     <div id="app"></div>
 
     <script>
@@ -35,47 +36,51 @@
             </div>
             `;
         }
-
-        show('showRedAndYellow()', 'red', 'gray', 'gray');
+        
+        showRed();
         
         function showRed() {            
-            document.getElementById('app').innerHTML = /*HTML*/`
-            <div id="trafficLight" onclick="showRedAndYellow()">
-                <div class="light" style="background-color: red;"></div>
-                <div class="light" style="background-color: gray;"></div>
-                <div class="light" style="background-color: gray;"></div>
-            </div>
-            `;
+            show('showRedAndYellow()', 'red', 'gray', 'gray');
+            // document.getElementById('app').innerHTML = /*HTML*/`
+            // <div id="trafficLight" onclick="showRedAndYellow()">
+            //     <div class="light" style="background-color: red;"></div>
+            //     <div class="light" style="background-color: gray;"></div>
+            //     <div class="light" style="background-color: gray;"></div>
+            // </div>
+            // `;
         }
 
         function showRedAndYellow() {
-            document.getElementById('app').innerHTML = /*HTML*/`
-            <div id="trafficLight" onclick="showGreen()">
-                <div class="light" style="background-color: red;"></div>
-                <div class="light" style="background-color: yellow;"></div>
-                <div class="light" style="background-color: gray;"></div>
-            </div>
-            `;
+            show('showGreen()', 'red', 'yellow', 'gray');
+            // document.getElementById('app').innerHTML = /*HTML*/`
+            // <div id="trafficLight" onclick="showGreen()">
+            //     <div class="light" style="background-color: red;"></div>
+            //     <div class="light" style="background-color: yellow;"></div>
+            //     <div class="light" style="background-color: gray;"></div>
+            // </div>
+            // `;
         }
 
         function showGreen() {
-            document.getElementById('app').innerHTML = /*HTML*/`
-            <div id="trafficLight" onclick="showYellow()">
-                <div class="light" style="background-color: gray;"></div>
-                <div class="light" style="background-color: gray;"></div>
-                <div class="light" style="background-color: green;"></div>
-            </div>
-            `;
+            show('showYellow()', 'gray', 'gray', 'green');
+            // document.getElementById('app').innerHTML = /*HTML*/`
+            // <div id="trafficLight" onclick="showYellow()">
+            //     <div class="light" style="background-color: gray;"></div>
+            //     <div class="light" style="background-color: gray;"></div>
+            //     <div class="light" style="background-color: green;"></div>
+            // </div>
+            // `;
         }
 
         function showYellow() {
-            document.getElementById('app').innerHTML = /*HTML*/`
-            <div id="trafficLight" onclick="showRed()">
-                <div class="light" style="background-color: gray;"></div>
-                <div class="light" style="background-color: yellow;"></div>
-                <div class="light" style="background-color: gray;"></div>
-            </div>
-            `;
+            show('showRed()', 'gray', 'yellow', 'gray');
+            // document.getElementById('app').innerHTML = /*HTML*/`
+            // <div id="trafficLight" onclick="showRed()">
+            //     <div class="light" style="background-color: gray;"></div>
+            //     <div class="light" style="background-color: yellow;"></div>
+            //     <div class="light" style="background-color: gray;"></div>
+            // </div>
+            // `;
         }
 
     </script>
